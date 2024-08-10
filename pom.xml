@@ -1,1 +1,61 @@
-<packaging>war</packaging>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/POM/4.0.0/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <properties>
+        <maven.tomcat.plugin.version>1.1</maven.tomcat.plugin.version>
+        <tomcat.version>8.0.52</tomcat.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <!-- Tomcat Maven Plugin -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tomcat-maven-plugin</artifactId>
+                <version>${maven.tomcat.plugin.version}</version>
+                <configuration>
+                    <url>http://172.27.133.24:8282/manager/text</url>
+                    <server>tomcatServer</server>
+                    <path>/my-app</path>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <!-- Define any required repositories here -->
+        <!-- Example:
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+        -->
+    </repositories>
+
+    <dependencies>
+        <!-- Add your project dependencies here -->
+        <!-- Example:
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.3.10</version>
+        </dependency>
+        -->
+    </dependencies>
+
+    <servers>
+        <server>
+            <id>tomcatServer</id>
+            <username>your-username</username>
+            <password>your-password</password>
+        </server>
+    </servers>
+</project>
