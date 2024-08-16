@@ -22,7 +22,7 @@
                 <artifactId>tomcat-maven-plugin</artifactId>
                 <version>${maven.tomcat.plugin.version}</version>
                 <configuration>
-                    <url>http://172.27.133.24:8282/manager/text</url>
+                    <url>//any website//</url>
                     <server>tomcatServer</server>
                     <path>/my-app</path>
                 </configuration>
